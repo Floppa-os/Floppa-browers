@@ -1,9 +1,9 @@
 from PyQt6.QtWidgets import QMainWindow, QToolBar, QLineEdit, QVBoxLayout, QWidget, QTabWidget
 from PyQt6.QtCore import QUrl
 from PyQt6.QtWebEngineWidgets import QWebEngineView
-name = input("Enter your name: ")
+name = input("Enter your name: ") # Определяем имя профиля
 print("Hello " + name + "!")
-if name == "root":
+if name == "root": # Для красоты
     breakpoint()
 class MainWindow(QMainWindow):
     def __init__(self):
@@ -28,6 +28,7 @@ class MainWindow(QMainWindow):
         nav_bar.addAction("Back", lambda: self.tabs.currentWidget().back())
         nav_bar.addAction("Forward", lambda: self.tabs.currentWidget().forward())
         nav_bar.addAction("Reload", lambda: self.tabs.currentWidget().reload())
+        nav_bar.addAction("/", lambda: self.tabs.currentWidget().colorCount())
         nav_bar.addWidget(self.url_bar)
         nav_bar.addAction(name, lambda: self.tabs.currentWidget().back())
 
