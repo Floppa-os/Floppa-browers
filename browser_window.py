@@ -1,12 +1,14 @@
 from PyQt6.QtWidgets import QMainWindow, QToolBar, QLineEdit, QVBoxLayout, QWidget, QTabWidget
 from PyQt6.QtCore import QUrl
 from PyQt6.QtWebEngineWidgets import QWebEngineView
-
-
+name = input("Enter your name: ") # Определяем имя профиля
+print("Hello " + name + "!")
+if name == "root": # Для красоты
+    breakpoint()
 class MainWindow(QMainWindow):
     def __init__(self):
         super().__init__()
-        self.setWindowTitle("Simple Python Browser")
+        self.setWindowTitle("Floppa browers")
         self.resize(1024, 768)
 
         # Создаем панель вкладок
@@ -26,10 +28,12 @@ class MainWindow(QMainWindow):
         nav_bar.addAction("Back", lambda: self.tabs.currentWidget().back())
         nav_bar.addAction("Forward", lambda: self.tabs.currentWidget().forward())
         nav_bar.addAction("Reload", lambda: self.tabs.currentWidget().reload())
+        nav_bar.addAction("/", lambda: self.tabs.currentWidget().colorCount())
         nav_bar.addWidget(self.url_bar)
+        nav_bar.addAction(name, lambda: self.tabs.currentWidget().back())
 
         # Открываем начальную вкладку
-        self.add_new_tab(QUrl("https://www.google.com"), "Homepage")
+        self.add_new_tab(QUrl("https://github.com/Floppa-os/Floppa-browers.git"), "Mickredset")
 
     def add_new_tab(self, qurl=None, label="Blank"):
         if qurl is None:
