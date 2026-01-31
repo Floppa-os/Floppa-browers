@@ -29,6 +29,7 @@ class MainWindow(QMainWindow):
         # Навигационная панель
         nav_bar = QToolBar()
         self.addToolBar(nav_bar)
+        print("nav_bar = QToolBar()")
 
         self.url_bar = QLineEdit()
         self.url_bar.returnPressed.connect(self.navigate_to_url)

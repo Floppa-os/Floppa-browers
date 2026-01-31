@@ -15,6 +15,7 @@ print(id1)
 print(id2)
 print(id3)
 print(id4)
+print("if __name__ == __main__")
 print(id)
 def main():
     app = QApplication(sys.argv)
