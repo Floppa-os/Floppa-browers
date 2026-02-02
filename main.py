@@ -1,7 +1,7 @@
 import random
 import sys
 from PyQt6.QtWidgets import QApplication
-from browser_window import MainWindow
+from browser_window import MainWindow, name
 from PyQt6.QtWidgets import QApplication, QMainWindow, QPushButton, QVBoxLayout, QWidget, QFileDialog, QLabel
 print("import QWebEngineView")
 print("import sys")

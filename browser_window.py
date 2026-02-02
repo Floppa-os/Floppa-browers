@@ -25,6 +25,7 @@ class MainWindow(QMainWindow):
         self.tabs.tabCloseRequested.connect(self.close_current_tab)
         self.tabs.setTabsClosable(True)
         self.setCentralWidget(self.tabs)
+        self.tabs.currentChanged.connect(self.navigate_to_url)
 
         # Навигационная панель
         nav_bar = QToolBar()
