@@ -17,6 +17,13 @@ print(id3)
 print(id4)
 print("if __name__ == __main__")
 print(id)
+print("breakpoint - break")
+print("run - run")
+run = input(name + " >")
+if run == "run":
+    print("Hello " + name + "!")
+if run == "break":
+    breakpoint()
 def main():
     app = QApplication(sys.argv)
     window = MainWindow()
